@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikipedia Category Word Cloud</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.5/build/d3.layout.cloud.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Wikipedia Category Word Cloud</h1>
+        
+        <div class="form-container">
+            <form id="category-form">
+                <div class="form-group">
+                    <label for="category">Enter Wikipedia Category:</label>
+                    <input type="text" id="category" name="category" placeholder="e.g. Machine learning" required>
+                </div>
+                <button type="submit" id="analyze-btn">Generate Word Cloud</button>
+            </form>
+        </div>
+        
+        <div id="loading" class="hidden">
+            <p>Analyzing category... This may take a few minutes if the data is not cached.</p>
+            <div class="spinner"></div>
+        </div>
+        
+        <div id="result-container" class="hidden">
+            <h2 id="result-title"></h2>
+            <div id="word-cloud"></div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

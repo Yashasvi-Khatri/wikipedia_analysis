@@ -1,0 +1,3 @@
+requests>=2.31.0
+nltk>=3.8.1
+flask>=2.0.0

@@ -18,6 +18,14 @@
                     <label for="category">Enter Wikipedia Category:</label>
                     <input type="text" id="category" name="category" placeholder="e.g. Machine learning" required>
                 </div>
+                <div class="form-group">
+                    <label for="palette">Color Palette:</label>
+                    <select id="palette" name="palette">
+                        {% for palette in palettes %}
+                        <option value="{{ palette }}">{{ palette|capitalize }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
                 <button type="submit" id="analyze-btn">Generate Word Cloud</button>
             </form>
         </div>
